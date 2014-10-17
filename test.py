@@ -4,8 +4,8 @@ import subprocess
 from datetime import datetime
 from datetime import timedelta
 
-tomorrow = "Oct 17 2014 01:03AM"
-today = "Oct 16 2014 01:02AM"
+tomorrow = "Oct 18 2014 01:04AM"
+today = "Oct 17 2014 01:03AM"
 
 #STOP DO NOT USE ABOVE VARIABLES IN YOUR LOOP
 #YOU WILL MAKE KITTENS SAD
