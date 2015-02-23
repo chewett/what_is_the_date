@@ -19,12 +19,17 @@ new_file = []
 for line in this_script:
     has_tomorrow = re.search(r'^tomorrow = "([^"]*)"', line)
     if has_tomorrow:
-    	today_today = has_tomorrow.group(1)
-    	today_today_datetime = datetime.strptime(today_today, '%b %d %Y %I:%M%p') + timedelta(days=1,minutes=1)
-        tomorrow_tomorrow = datetime.strftime(today_today_datetime, '%b %d %Y %I:%M%p')
+        today_today = has_tomorrow.group(1)
+        today_today_datetime = datetime.strptime(today_today,
+                                                 '%b %d %Y %I:%M%p')
+            + timedelta(days=1, minutes=1)
+
+        tomorrow_tomorrow = datetime.strftime(today_today_datetime,
+                                              '%b %d %Y %I:%M%p')
+
         new_line = 'tomorrow = "<<<TOMORROW>>>"\n'
     elif re.search(r'^today = "[^"]*"', line):
-    		new_line = 'today = "<<<TODAY>>>"\n'
+            new_line = 'today = "<<<TODAY>>>"\n'
     else:
         new_line = line
     new_file.append(new_line)
@@ -45,8 +50,8 @@ new_script.close()
 
 shutil.move("test_new.py", "test.py")
 
-subprocess.call("git add test.py" ,shell=True)
-subprocess.call("git commit -m 'Fixed the time'" ,shell=True)
+subprocess.call("git add test.py", shell=True)
+subprocess.call("git commit -m 'Fixed the time'", shell=True)
 subprocess.call("git push", shell=True)
 
 print today_today
