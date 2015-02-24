@@ -1,5 +1,5 @@
 main: 
-	echo "finishing making python script"
+	echo "Its python, why are you runnning make????"
 
 clean:
 	rm *.pyc
