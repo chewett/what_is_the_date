@@ -3,8 +3,8 @@ import re
 import subprocess
 from datetime import datetime, timedelta
 
-tomorrow = "Feb 23 2015 03:12AM"
-today = "Feb 22 2015 03:11AM"
+tomorrow = "Feb 24 2015 03:13AM"
+today = "Feb 23 2015 03:12AM"
 
 #STOP DO NOT USE ABOVE VARIABLES IN YOUR LOOP
 #YOU WILL MAKE KITTENS SAD
@@ -20,9 +20,7 @@ for line in this_script:
     has_tomorrow = re.search(r'^tomorrow = "([^"]*)"', line)
     if has_tomorrow:
         today_today = has_tomorrow.group(1)
-        today_today_datetime = datetime.strptime(today_today,
-                                                 '%b %d %Y %I:%M%p')
-            + timedelta(days=1, minutes=1)
+        today_today_datetime = datetime.strptime(today_today,'%b %d %Y %I:%M%p') + timedelta(days=1, minutes=1)
 
         tomorrow_tomorrow = datetime.strftime(today_today_datetime,
                                               '%b %d %Y %I:%M%p')
