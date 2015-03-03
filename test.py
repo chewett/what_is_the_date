@@ -3,8 +3,8 @@ import re
 import subprocess
 from datetime import datetime, timedelta
 
-tomorrow = "Mar 03 2015 03:20AM"
-today = "Mar 02 2015 03:19AM"
+tomorrow = "Mar 04 2015 03:21AM"
+today = "Mar 03 2015 03:20AM"
 
 #STOP DO NOT USE ABOVE VARIABLES IN YOUR LOOP
 #YOU WILL MAKE KITTENS SAD
