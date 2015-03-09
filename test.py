@@ -3,6 +3,8 @@ import re
 import subprocess
 from datetime import datetime, timedelta
 
+#debug=False
+
 tomorrow = "Mar 10 2015 03:27AM"
 today = "Mar 09 2015 03:26AM"
 
@@ -11,6 +13,12 @@ today = "Mar 09 2015 03:26AM"
 
 this_script = open("test.py")
 new_script = open("test_new.py", "w")
+
+debug = False
+for line in this_script:
+    if line.startswith("#debug"):
+        debug = bool(re.search(r'#debug=(.*)', line).group(1) == 'True')
+        break
 
 #YOUR CODE STARTS HERE
 today_today = ''
@@ -46,11 +54,12 @@ new_script.write(lines)
 this_script.close()
 new_script.close()
 
-shutil.move("test_new.py", "test.py")
+if not debug:
+    shutil.move("test_new.py", "test.py")
 
-subprocess.call("git add test.py", shell=True)
-subprocess.call("git commit -m 'Fixed the time'", shell=True)
-subprocess.call("git push", shell=True)
+    subprocess.call("git add test.py", shell=True)
+    subprocess.call("git commit -m 'Fixed the time'", shell=True)
+    subprocess.call("git push", shell=True)
 
 print today_today
 print tomorrow_tomorrow
