@@ -1,12 +1,6 @@
-import shutil
-import re
-import subprocess
-from datetime import datetime, timedelta
 
-#debug=False
-
-tomorrow = "Mar 10 2015 03:27AM"
-today = "Mar 09 2015 03:26AM"
+tomorrow = "Mar 11 2015 03:28AM"
+today = "Mar 10 2015 03:27AM"
 
 #STOP DO NOT USE ABOVE VARIABLES IN YOUR LOOP
 #YOU WILL MAKE KITTENS SAD
