@@ -1,3 +1,9 @@
+import shutil
+import re
+import subprocess
+from datetime import datetime, timedelta
+
+#debug=False
 
 tomorrow = "Mar 11 2015 03:28AM"
 today = "Mar 10 2015 03:27AM"
@@ -13,6 +19,9 @@ for line in this_script:
     if line.startswith("#debug"):
         debug = bool(re.search(r'#debug=(.*)', line).group(1) == 'True')
         break
+
+this_script.close()
+this_script = open("test.py")
 
 #YOUR CODE STARTS HERE
 today_today = ''
