@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 
 #debug=False
 
-tomorrow = "Oct 16 2016 01:13PM"
-today = "Oct 15 2016 01:12PM"
+tomorrow = "Oct 17 2016 01:14PM"
+today = "Oct 16 2016 01:13PM"
 
 #STOP DO NOT USE ABOVE VARIABLES IN YOUR LOOP
 #YOU WILL MAKE KITTENS SAD
